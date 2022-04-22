@@ -54,5 +54,18 @@ if (BMI >= 25){
   console.log ('slim');
 }
 
-console.log (3 / 1);
-console.log (3 % 1);
+let numx = 6;
+switch (numx) {
+  case 1: 
+    console.log ('1');
+    break;
+  case 2: 
+    console.log ('2');
+    break;
+  case 3: 
+    console.log ('3');
+    break;
+  default:
+    console.log ('4');
+    break;
+}
