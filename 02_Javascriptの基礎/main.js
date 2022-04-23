@@ -1,24 +1,19 @@
 'use strict';
 
-let num = 0;
-function updateCounter(n) {
-  const counter = document.getElementById('counter');
-  counter.textContent = n;
+function keyUp(e) {
+  // console.log('keyUp');
+  // console.log(inputText.value);
+  // console.log(inputText.value.length);
+  // 入力された値を取得
+  let str = inputText.value;
+  // 残りの文字数
+  let num = 10 - str.length;
+  console.log(num);
+  // 文字数表示部分の要素を取得
+  const characterCount = document.getElementById('characterCount');
+  // 残りの文字数をセットして表示
+  characterCount.textContent = num;
 }
 
-function countUp() {
-  num++;
-  // const counter = document.getElementById('counter');
-  // counter.textContent = num;
-  updateCounter(num);
-}
-
-function reset() {
-  num = 0;
-  // const counter = document.getElementById('counter');
-  // counter.textContent = num;
-  updateCounter(num);
-}
-
-countUpButton.addEventListener('click', countUp, false);
-resetButton.addEventListener('click', reset, false);
+const inputText = document.getElementById('inputText');
+inputText.addEventListener('keyup', keyUp, false);
