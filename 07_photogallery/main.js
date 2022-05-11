@@ -30,3 +30,12 @@ for(let i = 0; i < images.length; i++) {
   thumbnailImage.setAttribute('alt', images[i].description);
   thumbnails.insertBefore(thumbnailImage, null);
 }
+
+// クリックしたサムネイル画像をメイン画像に設定する
+thumbnails.addEventListener('click', function(e) {
+  if(e.target.src) {
+    // console.log(e.target);
+    image.src = e.target.src;
+    description.textContent = e.target.alt;
+  }
+}, false);
